@@ -450,9 +450,11 @@ AIC(model_2)
 AIC(model_1, model_2)
 
 #Fit
+library(stats)
 sum(residuals(model_1, type = "pearson")^2)
 deviance(model_1)
-1 - pchisq(deviance(model_1), df.residual(model_1)): The p-value is very small, indicating evidence of lack of fit.
+result <- (1 - (pchisq(deviance(model_1), df.residual(model_1)))) # The p-value is very small, indicating evidence of lack of fit.
+result
 ```
 
 
